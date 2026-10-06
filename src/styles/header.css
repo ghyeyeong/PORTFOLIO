@@ -1,0 +1,99 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    background: var(--white);
+    z-index: 100;
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1440px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.gnb {
+    display: flex;
+    gap: 55px;
+}
+
+.gnb button {
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    font-size: 18px;
+    font-weight: 500;
+    font-family: inherit;
+
+    color: inherit;
+
+    cursor: pointer;
+}
+
+.gnb button:hover {
+    color: var(--point);
+}
+
+.gnb-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.gnb-right .alarm {
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.gnb-right .alarm img {
+    display: block;
+    width: 30px;
+}
+
+.gnb-right .employ {
+    width: 80px;
+    height: 36px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+
+    background: var(--point);
+    color: var(--white);
+
+    cursor: pointer;
+}
+
+.gnb-right .employ:hover {
+    opacity: 0.85;
+}

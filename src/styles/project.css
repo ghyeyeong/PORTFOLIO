@@ -1,0 +1,751 @@
+/* =====================================
+   PROJECT SECTION
+===================================== */
+
+.project-section {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 720px;
+
+    overflow: hidden;
+
+    background: var(--light-gray);
+
+    color: var(--black);
+}
+
+
+/* =====================================
+   TITLE
+===================================== */
+
+.project-title {
+    position: absolute;
+
+    top: 80px;
+    left: 60px;
+
+    z-index: 50;
+}
+
+.project-title span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--point);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.project-title h2 {
+    margin: 0;
+
+    font-size: 42px;
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+
+/* =====================================
+   SLIDER
+===================================== */
+
+.project-slider {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 420px;
+    height: 560px;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* =====================================
+   CARD
+===================================== */
+
+.project-card {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 420px;
+    height: 560px;
+
+    transform-origin: center center;
+
+    transition:
+        transform 0.8s cubic-bezier(.22, .61, .36, 1),
+        opacity 0.8s ease;
+
+    pointer-events: none;
+
+    visibility: visible;
+}
+
+.project-card.is-active {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+
+
+
+/* =====================================
+   CARD INNER
+===================================== */
+
+.project-card-inner {
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 35px;
+
+    background: var(--white);
+
+    border: 1px solid rgba(17, 17, 17, 0.08);
+
+    border-radius: 2px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow:
+        0 20px 50px rgba(17, 17, 17, 0.08);
+}
+
+
+/* =====================================
+   IMAGE
+===================================== */
+
+.project-image {
+    width: 100%;
+    height: 270px;
+
+    overflow: hidden;
+
+    background: var(--light-gray);
+}
+
+
+.project-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+
+.project-card.is-active:hover .project-image img {
+    transform: scale(1.03);
+}
+
+
+/* =====================================
+   INFO
+===================================== */
+
+.project-info {
+    padding-top: 25px;
+}
+
+
+.project-type {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--point);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.project-info h3 {
+    margin: 0 0 15px;
+
+    color: var(--black);
+
+    font-size: 28px;
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+
+.project-description {
+    max-width: 340px;
+
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    /* 설명이 길어졌을 때 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+
+/* =====================================
+   META
+===================================== */
+
+.project-meta {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+.project-period {
+    color: #999999;
+
+    font-size: 11px;
+}
+
+
+/* =====================================
+   SKILLS
+===================================== */
+
+.project-skills {
+    display: flex;
+
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+
+.project-skills span {
+    padding: 5px 8px;
+
+    background: var(--light-gray);
+
+    color: var(--gray);
+
+    font-size: 10px;
+
+    border-radius: 1px;
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.project-navigation button {
+    position: absolute;
+
+    top: 50%;
+
+    width: 70px;
+    height: 60px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--black);
+
+    cursor: pointer;
+
+    z-index: 30;
+}
+
+
+/*
+    카드의 양옆 약 200px
+*/
+
+.project-prev {
+    left: calc(50% - 410px);
+}
+
+.project-next {
+    right: calc(50% - 410px);
+}
+
+
+/* =====================================
+   ARROW
+===================================== */
+
+.project-prev::before,
+.project-prev::after,
+.project-next::before,
+.project-next::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 60px;
+    height: 1px;
+
+    background: var(--black);
+
+    transition: 0.5s;
+}
+
+
+/* PREV */
+
+.project-prev::before,
+.project-prev::after {
+    left: -55px;
+    width: 45px;
+
+    transform-origin: left center;
+}
+
+
+/* NEXT */
+
+.project-next::before,
+.project-next::after {
+    left: 55px;
+    width: 45px;
+
+    transform-origin: right center;
+}
+
+
+/* =====================================
+   ARROW TEXT
+===================================== */
+
+.project-prev span,
+.project-next span {
+    position: absolute;
+
+    top: 50%;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.5s;
+}
+
+
+.project-prev span {
+    left: 20px;
+
+    transform: translateY(-50%);
+}
+
+
+.project-next span {
+    right: 20px;
+
+    transform: translateY(-50%);
+}
+
+
+/* =====================================
+   HOVER
+   MusicPlayer와 같은 움직임
+===================================== */
+
+.project-prev:hover span {
+    opacity: 0;
+
+    transform:
+        translate(30px, -50%);
+}
+
+
+.project-prev:hover::before {
+    transform: rotate(-30deg);
+}
+
+
+.project-prev:hover::after {
+    transform: rotate(30deg);
+}
+
+
+.project-next:hover span {
+    opacity: 0;
+
+    transform:
+        translate(-30px, -50%);
+}
+
+
+.project-next:hover::before {
+    transform: rotate(30deg);
+}
+
+
+.project-next:hover::after {
+    transform: rotate(-30deg);
+}
+
+
+/* =====================================
+   COUNT
+===================================== */
+
+.project-count {
+    position: absolute;
+
+    left: 50%;
+    bottom: 45px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--gray);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+.project-count i {
+    display: block;
+
+    width: 35px;
+    height: 1px;
+
+    background: #cccccc;
+}
+
+/* =========================
+   Project Modal
+========================= */
+
+.project-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background: rgba(17, 17, 17, 0.72);
+
+    animation: projectModalBg 0.3s ease;
+}
+
+
+.project-modal-content {
+    position: relative;
+
+    width: min(900px, 100%);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+
+    animation: projectModalOpen 0.35s ease;
+}
+
+
+/* 닫기 버튼 */
+
+.project-modal-close {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(17, 17, 17, 0.75);
+    color: #ffffff;
+
+    font-size: 24px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.project-modal-close:hover {
+    background: #4f5b3a;
+}
+
+
+/* 이미지 */
+
+.project-modal-image {
+    width: 100%;
+
+    background: #f5f5f5;
+}
+
+.project-modal-image img {
+    display: block;
+
+    width: 100%;
+    max-height: 500px;
+
+    object-fit: cover;
+}
+
+
+/* 정보 */
+
+.project-modal-info {
+    padding: 40px;
+}
+
+
+.project-modal-type {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #4f5b3a;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+}
+
+
+.project-modal-info h2 {
+    margin: 0 0 20px;
+
+    color: #111111;
+
+    font-size: 36px;
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+.project-modal-description {
+    margin-bottom: 25px;
+
+    color: #666666;
+
+    line-height: 1.8;
+}
+
+
+/* 기간 */
+
+.project-modal-period {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.project-modal-period strong {
+    color: #111111;
+
+    font-size: 13px;
+}
+
+.project-modal-period span {
+    color: #666666;
+
+    font-size: 13px;
+}
+
+
+/* 기술 */
+
+.project-modal-skills {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 30px;
+}
+
+.project-modal-skills span {
+    padding: 8px 13px;
+
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+
+    background: #f5f5f5;
+
+    color: #666666;
+
+    font-size: 12px;
+}
+
+
+/* 버튼 */
+
+.project-modal-buttons {
+    display: flex;
+
+    gap: 10px;
+}
+
+.project-modal-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 130px;
+
+    padding: 13px 24px;
+
+    border: 1px solid #111111;
+    border-radius: 6px;
+
+    background: #111111;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.project-modal-buttons a:hover {
+    border-color: #4f5b3a;
+
+    background: #4f5b3a;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes projectModalOpen {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+
+@keyframes projectModalBg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+    .project-modal {
+        padding: 20px;
+    }
+
+    .project-modal-info {
+        padding: 30px 25px;
+    }
+
+    .project-modal-info h2 {
+        font-size: 28px;
+    }
+
+    .project-modal-buttons {
+        flex-direction: column;
+    }
+
+    .project-modal-buttons a {
+        width: 100%;
+    }
+
+}
