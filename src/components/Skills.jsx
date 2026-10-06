@@ -23,10 +23,10 @@ function Skills() {
                         </p>
                     </li>
                     <li className="img">
-                        <img src="/skill1.jpg" alt="" />
+                        <img src={`${import.meta.env.BASE_URL}skill1.jpg`} alt="" />
                     </li>
                     <li className="img">
-                        <img src="/skill2.jpg" alt="" />
+                        <img src={`${import.meta.env.BASE_URL}skill2.jpg`} alt="" />
                     </li>
                     <li><h3 className="skill-tit">디자인</h3>
                         <p className="skill-txt">

@@ -11,7 +11,7 @@ function Hero() {
                 loop
                 playsInline
             >
-                <source src="/hero.mp4" type="video/mp4" />
+                <source src={`${import.meta.env.BASE_URL}hero.mp4`} />
             </video>
             <div className="inner">
                 <h2>안녕하세요, 김혜영입니다.</h2>

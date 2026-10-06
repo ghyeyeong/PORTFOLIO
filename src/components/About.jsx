@@ -8,7 +8,7 @@ function About() {
                 <h2>PROFILE</h2>
 
                 <div className="about-main">
-                    <img src="/about.jpg" alt="" />
+                    <img src={`${import.meta.env.BASE_URL}about.jpg`} alt="" />
 
                     <div className="text">
                         <p>

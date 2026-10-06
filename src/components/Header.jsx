@@ -64,7 +64,7 @@ function Header() {
                             className="alarm"
                             onClick={() => setModalType('alarm')}
                         >
-                            <img src="/Bell.png" alt="알림" />
+                            <img src={`${import.meta.env.BASE_URL}Bell.png`} alt="알림" />
                         </button>
 
                         <button
